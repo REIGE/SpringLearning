@@ -10,7 +10,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
     <!-- 加载配置文件 -->
-    <context:property-placeholder location="classpath:*.properties" />
+    <context:property-placeholder location="classpath:db.properties" />
     <!--1 配置数据源-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${jdbc.driverClass}"/>
@@ -26,7 +26,6 @@
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
         </property>
         <property name="packagesToScan" value="com.reige"/>
-
         <property name="jpaProperties">
             <props>
                 <prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
@@ -36,7 +35,6 @@
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
             </props>
         </property>
-
     </bean>
 
     <!--3 配置事务管理器-->

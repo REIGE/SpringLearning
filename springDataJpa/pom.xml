@@ -31,6 +31,11 @@
 
         <dependency>
             <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
 
@@ -48,5 +53,38 @@
     </dependencies>
     <build>
         <finalName>spring-data-jpa</finalName>
+        <resources>
+            <!--表示把java目录下的有关xml文件,properties文件编译/打包的时候放在resource目录下-->
+            <resource>
+                <directory>${basedir}/src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+            </resource>
+<!--            <resource>
+                <directory>${basedir}/src/main/config</directory>
+            </resource>-->
+        </resources>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <!-- 指明编译源代码时使用的字符编码，
+                    maven编译的时候默认使用的GBK编码，
+                    通过encoding属性设置字符编码，
+                    告诉maven这个项目使用UTF-8来编译 -->
+                    <!-- <encoding>utf8</encoding> -->
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
