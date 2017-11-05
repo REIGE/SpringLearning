@@ -116,9 +116,9 @@
 
             <!--Quartz-->
             <dependency>
-                <groupId>org.opensymphony.quartz</groupId>
+                <groupId>org.quartz-scheduler</groupId>
                 <artifactId>quartz</artifactId>
-                <version>${quartz.version}</version>
+                <version>2.2.3</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
