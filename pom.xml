@@ -21,6 +21,8 @@
         <quartz.version>2.2.3</quartz.version>
         <aspectjrt.version>1.5.4</aspectjrt.version>
         <aspectjweaver.version>1.8.10</aspectjweaver.version>
+
+        <commons-lang.version>2.6</commons-lang.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -146,6 +148,12 @@
                 <version>${aspectjweaver.version}</version>
             </dependency>
 
+            <!--commons-->
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <modules>
