@@ -9,6 +9,12 @@
     ${_v}
     ${NOW_YEAY}
 
+    <@api target="userInfoTag" userId="1">
+        <#if outTagName?exists>
+        nickname：${outTagName.name}
+        email：${outTagName.sex}
+        </#if>
+    </@api>
     <body>
 	</body>
 </html>
