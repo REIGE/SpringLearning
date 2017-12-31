@@ -8,14 +8,9 @@ import com.reige.freemarker.utils.StringUtils;
 
 import java.util.Map;
 
-public abstract class SuperCustomTag {
-	
-	/**
-	 * 本方法采用多态集成的方式，然后用父类接收，用父类调用子类的 {@link result(...)} 方法。
-	 * @param params
-	 * @return
-	 */
-	protected abstract Object result(Map params);
+public abstract class SuperCustomTag<T> {
+
+
 	
 	
 	/**
@@ -36,4 +31,6 @@ public abstract class SuperCustomTag {
 		Object i = params.get(key);
 		return StringUtils.isBlank(i)?null:Integer.parseInt(i.toString());
 	}
+
+	protected abstract T result(Map params);
 }

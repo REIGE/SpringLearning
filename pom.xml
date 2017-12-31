@@ -88,12 +88,18 @@
                 <artifactId>spring-expression</artifactId>
                 <version>${spring.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jms</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
             <!--spring data jpa-->
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-jpa</artifactId>
                 <version>${spring-data-jpa.version}</version>
             </dependency>
+
 
             <dependency>
                 <groupId>org.hibernate</groupId>
@@ -120,6 +126,11 @@
                 <artifactId>jsp-api</artifactId>
                 <version>${jsp-api.version}</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>1.2</version>
             </dependency>
 
             <!--freemarker-->
@@ -154,6 +165,7 @@
                 <artifactId>commons-lang</artifactId>
                 <version>${commons-lang.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
     <modules>
@@ -161,5 +173,8 @@
         <module>freemarker</module>
         <module>Quartz</module>
         <module>SpringAOP</module>
+        <module>springMVC</module>
+        <module>mybatis</module>
+        <module>hibernate</module>
     </modules>
 </project>

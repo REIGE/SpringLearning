@@ -2,6 +2,7 @@ package com.reige.freemarker.extend;
 
 
 import com.reige.freemarker.tag.APITemplateModel;
+import com.reige.freemarker.tag.WYFTemplateModel;
 import com.reige.freemarker.utils.SpringContextUtil;
 import com.reige.freemarker.utils.StringUtils;
 import com.reige.util.UtilPath;
@@ -45,7 +46,7 @@ public class Ferrmarker {
 		cfg.setEncoding(Locale.getDefault(),"UTF-8") ;
 		
 		/**添加自定义标签*/
-		APITemplateModel api = SpringContextUtil.getBean("api",APITemplateModel.class);
+		WYFTemplateModel api = SpringContextUtil.getBean("api",WYFTemplateModel.class);
 		cfg.setSharedVariable("api", api);
 		
 		FreeMarkerConfigExtend ext = SpringContextUtil.getBean("freemarkerConfig",FreeMarkerConfigExtend.class);
