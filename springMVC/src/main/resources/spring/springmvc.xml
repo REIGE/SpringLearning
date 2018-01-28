@@ -10,13 +10,12 @@
 
     <!-- 使用spring组件扫描 -->
     <context:component-scan base-package="com.reige.controller"/>
-
     <!-- 静态资源 解析 -->
     <mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
     <mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
 
     <!-- 通过annotation-driven可以替代下边的处理器映射器和适配器 -->
-    <mvc:annotation-driven conversion-service="conversionService" validator="validator" >
+    <mvc:annotation-driven validator="validator" >
         <mvc:message-converters>
             <ref bean="fastjsonConverter"/>
             <ref bean="stringConverter"/>
@@ -79,11 +78,10 @@
     </bean>
 
     <!-- 文件上传 -->
-    <bean id="multipartResolver"
-          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <!-- 设置上传文件的最大尺寸为5MB -->
         <property name="maxUploadSize">
-            <value>5242880</value>
+            <value>52428800</value>
         </property>
     </bean>
     <!-- 定义统一异常处理器 -->

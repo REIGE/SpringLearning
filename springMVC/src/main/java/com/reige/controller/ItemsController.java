@@ -64,11 +64,14 @@ public class ItemsController {
 
 		return modelAndView;
 	}
+
+
 	//批量修改商品提交
+    @ResponseBody
 	@RequestMapping("/editItemsListSubmit")
-	public String editItemsListSubmit(ItemsQueryVo itemsQueryVo)throws Exception{
-		
-		return "success";
+	public ItemsCustom editItemsListSubmit(ItemsQueryVo itemsQueryVo,Integer id)throws Exception{
+        ItemsCustom itemsCustom = new ItemsCustom();
+        return itemsCustom;
 	}
 	
 	//商品修改页面显示
