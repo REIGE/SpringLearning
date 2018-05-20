@@ -67,7 +67,7 @@ public class Ferrmarker {
 		Map<String,String> sets = vcfg.getSettings();
 		setting.putAll(sets);
 		try {
-			cfg.setSettings(setting);
+			config.setSettings(setting);
 		} catch (TemplateException e) {
 			logger.error("添加settings error;" ,e);
 		}

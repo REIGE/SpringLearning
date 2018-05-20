@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.reige.controller.validation.ValidGroup1;
 import com.reige.pojo.ItemsCustom;
 import com.reige.pojo.ItemsQueryVo;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -33,6 +33,7 @@ public class ItemsController {
 	
 	//单独将商品类型的方法提出来，将方法返回值填充到request，在页面显示
 	@ModelAttribute("itemsType")
+	@ApiOperation(value="根据ID获取用户信息",httpMethod="GET",notes="get user by id",response= JsonTestController.class)
 	public Map<String, String> getItemsType()throws Exception{
 		
 		HashMap<String, String> itemsType = new HashMap<String,String>();

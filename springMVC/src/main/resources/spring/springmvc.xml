@@ -14,6 +14,15 @@
     <mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
     <mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
 
+    <!--将静态资源交由默认的servlet处理-->
+    <mvc:default-servlet-handler />
+    <!--重要！将你的SwaggerConfig配置类注入-->
+    <bean class="com.reige.config.SwaggerConfig"/>
+    <!--重要！配置swagger资源不被拦截-->
+    <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/" />
+    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/" />
+
+
     <!-- 通过annotation-driven可以替代下边的处理器映射器和适配器 -->
     <mvc:annotation-driven validator="validator" >
         <mvc:message-converters>
@@ -21,7 +30,6 @@
             <ref bean="stringConverter"/>
         </mvc:message-converters>
     </mvc:annotation-driven>
-
 
     <bean id="stringConverter"
           class="org.springframework.http.converter.StringHttpMessageConverter">
